@@ -1,10 +1,10 @@
 {
-  "name": "sunit",
+  "name": "strunit",
   "version": "0.1.0",
   "main": "dist",
   "types": "dist",
   "license": "MIT",
-  "repository": "sadorlovsky/sunit",
+  "repository": "sadorlovsky/strunit",
   "author": {
     "name": "Zach Orlovsky",
     "email": "sadorlovsky@gmail.com",

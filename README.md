@@ -1,4 +1,4 @@
-# sunit
+# strunit
 
 > ends a value with an unit
 
@@ -9,16 +9,16 @@ const width = 100
 document.querySelector('div').style.width = `${width}px`
 ```
 
-Please, don't. Use `sunit`!
+Please, don't. Use `strunit`!
 
 ## Usage
 
 ```bash
-yarn add sunit
+yarn add strunit
 ```
 
 ```ts
-import { px } from 'sunit'
+import { px } from 'strunit'
 
 const width = 100
 document.querySelector('div').style.width = px(width)

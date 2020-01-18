@@ -1,4 +1,4 @@
-# strunit
+# strunit ![](https://github.com/sadorlovsky/strunit/workflows/build/badge.svg)
 
 > ends a value with an unit
 

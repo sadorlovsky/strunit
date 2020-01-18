@@ -2,6 +2,7 @@
   "name": "sunit",
   "version": "0.1.0",
   "main": "dist",
+  "types": "dist",
   "license": "MIT",
   "repository": "sadorlovsky/sunit",
   "author": {
@@ -12,8 +13,14 @@
   "scripts": {
     "test": "ava",
     "lint": "eslint source/**/*.ts test/**/*.ts",
-    "build": "del dist && tsc"
+    "size": "npm run build && size-limit",
+    "build": "del dist && tsc",
+    "ci": "npm run lint && npm run test && npm run size"
   },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "ava": {
     "babel": false,
     "compileEnhancements": false,
@@ -33,7 +40,14 @@
       "pre-push": "lint-staged"
     }
   },
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "1 KB"
+    }
+  ],
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
     "ava": "^2.4.0",

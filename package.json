@@ -1,21 +1,25 @@
 {
   "name": "sunit",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "dist",
   "license": "MIT",
+  "repository": "sadorlovsky/sunit",
+  "author": {
+    "name": "Zach Orlovsky",
+    "email": "sadorlovsky@gmail.com",
+    "url": "https://orlovsky.dev"
+  },
   "scripts": {
     "test": "ava",
-    "lint": "eslint **/*.ts",
-    "build": "tsc source/index.ts --outDir dist"
+    "lint": "eslint source/**/*.ts test/**/*.ts",
+    "build": "del dist && tsc"
   },
   "ava": {
-    "files": [
-      "test/**/*"
-    ],
+    "babel": false,
+    "compileEnhancements": false,
     "extensions": [
       "ts"
     ],
-    "compileEnhancements": false,
     "require": [
       "ts-node/register"
     ]
@@ -33,6 +37,7 @@
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
     "ava": "^2.4.0",
+    "del-cli": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.0",

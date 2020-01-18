@@ -15,7 +15,8 @@
     "lint": "eslint source/**/*.ts test/**/*.ts",
     "size": "npm run build && size-limit",
     "build": "del dist && tsc",
-    "ci": "npm run lint && npm run test && npm run size"
+    "ci": "npm run lint && npm run test && npm run size",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "files": [
     "dist"

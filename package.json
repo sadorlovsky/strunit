@@ -1,8 +1,10 @@
 {
   "name": "strunit",
   "version": "0.1.0",
-  "main": "dist",
-  "types": "dist",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "module": "dist/esm/index.js",
+  "browser": "dist/browser/strunit.min.js",
   "license": "MIT",
   "repository": "sadorlovsky/strunit",
   "author": {
@@ -11,11 +13,13 @@
     "url": "https://orlovsky.dev"
   },
   "scripts": {
-    "test": "ava",
+    "test": "npm run lint && ava",
     "lint": "eslint source/**/*.ts test/**/*.ts",
-    "size": "npm run build && size-limit",
-    "build": "del dist && tsc",
-    "ci": "npm run lint && npm run test && npm run size",
+    "build:cjs": "del dist/csj && tsc --outDir dist/cjs",
+    "build:esm": "del dist/esm && tsc -m es6 --outDir dist/esm",
+    "build:browser": "del dist/browser && rollup -c rollup.config.ts && size-limit",
+    "prebuild": "del dist",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:browser",
     "prepublishOnly": "npm run test && npm run build"
   },
   "files": [
@@ -43,11 +47,13 @@
   },
   "size-limit": [
     {
-      "path": "dist/index.js",
-      "limit": "1 KB"
+      "path": "dist/browser/strunit.min.js",
+      "limit": "500 B",
+      "webpack": false
     }
   ],
   "devDependencies": {
+    "@rollup/plugin-typescript": "^2.1.0",
     "@size-limit/preset-small-lib": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/parser": "^2.16.0",
@@ -61,7 +67,10 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.10",
     "lint-staged": "^9.5.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-terser": "^5.2.0",
     "ts-node": "^8.6.2",
+    "tslib": "^1.10.0",
     "typescript": "^3.7.4"
   }
 }

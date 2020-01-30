@@ -1,6 +1,6 @@
 # strunit [![](https://github.com/sadorlovsky/strunit/workflows/build/badge.svg)](#strunit)
 
-> ends a value with an unit
+> ends a value with a unit
 
 Do that?
 

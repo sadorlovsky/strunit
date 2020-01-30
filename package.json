@@ -1,6 +1,6 @@
 {
   "name": "strunit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "module": "dist/esm/index.js",
@@ -13,7 +13,7 @@
     "url": "https://orlovsky.dev"
   },
   "scripts": {
-    "test": "npm run lint && ava",
+    "test": "npm run lint && nyc ava",
     "lint": "eslint source/**/*.ts test/**/*.ts",
     "build:cjs": "del dist/csj && tsc --outDir dist/cjs",
     "build:esm": "del dist/esm && tsc -m es6 --outDir dist/esm",
@@ -52,7 +52,14 @@
       "webpack": false
     }
   ],
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true,
+    "include": ["source"]
+  },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@rollup/plugin-typescript": "^2.1.0",
     "@size-limit/preset-small-lib": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
@@ -67,6 +74,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.0.10",
     "lint-staged": "^9.5.0",
+    "nyc": "^15.0.0",
     "rollup": "^1.29.0",
     "rollup-plugin-terser": "^5.2.0",
     "ts-node": "^8.6.2",

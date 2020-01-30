@@ -31,8 +31,8 @@ document.querySelector('div').style.width = px(width)
 Pixels
 
 ```ts
-px(42)             // => '42px'
-px('69')           // => '69px'
+px(42)              // => '42px'
+px('69')            // => '69px'
 ```
 
 ### pt(value: string | number): string
@@ -40,6 +40,52 @@ px('69')           // => '69px'
 Points
 
 ```ts
-pt(4.20)           // => '4.20pt'
-pt('3.141592653')  // => '3.141592653pt'
+pt(4.20)            // => '4.20pt'
+pt('3.141592653')   // => '3.141592653pt'
+```
+
+### pct(value: string | number): string
+
+Percents
+
+```ts
+pct(7)              // => '7%'
+pct('13')           // => '13%'
+```
+
+### cm(value: string | number): string
+
+Centimeters
+
+```ts
+cm(123)             // => '123cm'
+cm('4815162342')    // => '4815162342cm'
+```
+
+### mm(value: string | number): string
+
+Millimeters
+
+```ts
+mm(2012)            // => '2012mm'
+mm('88005553535')   // => '88005553535mm'
+```
+
+### em(value: string | number): string
+
+Font size of the parent element
+
+```ts
+em(666)             // => '666em'
+em('911')           // => '911em'
+```
+
+
+### rem(value: string | number): string
+
+Font size of the root element
+
+```ts
+rem(21)             // => '21rem'
+rem('777')          // => '777rem'
 ```

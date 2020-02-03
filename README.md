@@ -174,6 +174,6 @@ ch('not')             // => 'notch'
 ### custom(value: string | number, unit: string): string
 
 ```ts
-custom(63, 'region')  // => '63 region'
+custom(63, 'region')  // => '63region'
 custom(43, '°C')      // => '43°C'
 ```

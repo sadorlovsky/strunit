@@ -67,6 +67,10 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Yarn 2 stuff
+.yarn/
+.yarnrc.*
+
 # Lock file
 package-lock.json
 

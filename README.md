@@ -31,8 +31,8 @@ document.querySelector('div').style.width = px(width)
 Pixels
 
 ```ts
-px(42)              // => '42px'
-px('69')            // => '69px'
+px(42)                // => '42px'
+px('69')              // => '69px'
 ```
 
 ### pt(value: string | number): string
@@ -40,8 +40,8 @@ px('69')            // => '69px'
 Points
 
 ```ts
-pt(4.20)            // => '4.20pt'
-pt('3.141592653')   // => '3.141592653pt'
+pt(4.20)              // => '4.20pt'
+pt('3.141592653')     // => '3.141592653pt'
 ```
 
 ### pct(value: string | number): string
@@ -49,8 +49,8 @@ pt('3.141592653')   // => '3.141592653pt'
 Percents
 
 ```ts
-pct(7)              // => '7%'
-pct('13')           // => '13%'
+pct(7)                // => '7%'
+pct('13')             // => '13%'
 ```
 
 ### cm(value: string | number): string
@@ -58,8 +58,8 @@ pct('13')           // => '13%'
 Centimeters
 
 ```ts
-cm(123)             // => '123cm'
-cm('4815162342')    // => '4815162342cm'
+cm(123)               // => '123cm'
+cm('4815162342')      // => '4815162342cm'
 ```
 
 ### mm(value: string | number): string
@@ -67,8 +67,8 @@ cm('4815162342')    // => '4815162342cm'
 Millimeters
 
 ```ts
-mm(2012)            // => '2012mm'
-mm('88005553535')   // => '88005553535mm'
+mm(2012)              // => '2012mm'
+mm('88005553535')     // => '88005553535mm'
 ```
 
 ### em(value: string | number): string
@@ -76,8 +76,8 @@ mm('88005553535')   // => '88005553535mm'
 Font size of the parent element
 
 ```ts
-em(666)             // => '666em'
-em('911')           // => '911em'
+em(666)               // => '666em'
+em('911')             // => '911em'
 ```
 
 
@@ -86,8 +86,8 @@ em('911')           // => '911em'
 Font size of the root element
 
 ```ts
-rem(21)             // => '21rem'
-rem('777')          // => '777rem'
+rem(21)               // => '21rem'
+rem('777')            // => '777rem'
 ```
 
 ### vw(value: string | number): string
@@ -95,8 +95,8 @@ rem('777')          // => '777rem'
 1% of the viewport's width
 
 ```ts
-vw(100)             // => '100vw'
-vw('100')           // => '100vw'
+vw(100)               // => '100vw'
+vw('100')             // => '100vw'
 ```
 
 ### vh(value: string | number): string
@@ -104,8 +104,8 @@ vw('100')           // => '100vw'
 1% of the viewport's height
 
 ```ts
-vh(100)             // => '100vh'
-vh('100')           // => '100vh'
+vh(100)               // => '100vh'
+vh('100')             // => '100vh'
 ```
 
 ### vmin(value: string | number): string
@@ -113,8 +113,8 @@ vh('100')           // => '100vh'
 1% of the viewport's smaller dimension
 
 ```ts
-vmin(1)            // => '1vmin'
-vmin('1')          // => '1vmin'
+vmin(1)               // => '1vmin'
+vmin('1')             // => '1vmin'
 ```
 
 ### vmax(value: string | number): string
@@ -122,8 +122,8 @@ vmin('1')          // => '1vmin'
 1% of the viewport's larger dimension
 
 ```ts
-vmax(99)            // => '99vmax'
-vmax('99')          // => '99vmax'
+vmax(99)              // => '99vmax'
+vmax('99')            // => '99vmax'
 ```
 
 ### inch(value: string | number): string
@@ -131,8 +131,8 @@ vmax('99')          // => '99vmax'
 Inches
 
 ```ts
-inch(9)             // => '9in'
-inch('3.5')         // => '3.5in'
+inch(9)               // => '9in'
+inch('3.5')           // => '3.5in'
 ```
 
 ### pc(value: string | number): string
@@ -140,8 +140,8 @@ inch('3.5')         // => '3.5in'
 Picas
 
 ```ts
-pc(1881)            // => '1881pc'
-pc('1973')          // => '1973pc'
+pc(1881)              // => '1881pc'
+pc('1973')            // => '1973pc'
 ```
 
 ### Q(value: string | number): string
@@ -149,8 +149,8 @@ pc('1973')          // => '1973pc'
 Quarter-millimeters
 
 ```ts
-Q(3.79)             // => '3.79Q'
-Q('4.79')           // => '4.79Q'
+Q(3.79)               // => '3.79Q'
+Q('4.79')             // => '4.79Q'
 ```
 
 ### ex(value: string | number): string
@@ -158,8 +158,8 @@ Q('4.79')           // => '4.79Q'
 X-height of the element's font
 
 ```ts
-ex(1)               // => '1ex'
-ex('s')             // => 'sex'
+ex(1)                 // => '1ex'
+ex('s')               // => 'sex'
 ```
 
 ### ch(value: string | number): string
@@ -167,6 +167,13 @@ ex('s')             // => 'sex'
 The advance measure (width) of the glyph "0" of the element's font
 
 ```ts
-ch(0)               // => '0ch'
-ch('not')           // => 'notch'
+ch(0)                 // => '0ch'
+ch('not')             // => 'notch'
+```
+
+### custom(value: string | number, unit: string): string
+
+```ts
+custom(63, 'region')  // => '63 region'
+custom(43, '°C')      // => '43°C'
 ```

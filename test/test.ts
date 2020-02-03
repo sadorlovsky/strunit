@@ -1,6 +1,6 @@
 import test from 'ava'
 import {
-  px, pt, pct, cm, mm, em, rem, inch, pc, Q, vw, vh, vmin, vmax, ex, ch
+  px, pt, pct, cm, mm, em, rem, inch, pc, Q, vw, vh, vmin, vmax, ex, ch, custom
 } from '../source'
 
 test('px', t => {
@@ -81,4 +81,8 @@ test('ex', t => {
 test('ch', t => {
   t.is(ch('42'), '42ch')
   t.is(ch(42), '42ch')
+})
+
+test('custom', t => {
+  t.is(custom(42, '°C'), '42°C')
 })

@@ -61,3 +61,7 @@ export function ex (value: string | number) {
 export function ch (value: string | number) {
   return `${value}ch`
 }
+
+export function custom (value: string | number, unit: string) {
+  return `${value}${unit}`
+}

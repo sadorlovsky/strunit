@@ -1,4 +1,4 @@
-# strunit ![build](https://github.com/sadorlovsky/strunit/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/sadorlovsky/strunit/branch/master/graph/badge.svg)](https://codecov.io/gh/sadorlovsky/strunit)
+# strunit [![build](https://github.com/sadorlovsky/strunit/workflows/build/badge.svg)](#strunit) [![codecov](https://codecov.io/gh/sadorlovsky/strunit/branch/master/graph/badge.svg)](https://codecov.io/gh/sadorlovsky/strunit)
 
 > ends a value with a unit
 
